@@ -1,0 +1,2 @@
+web: bin/rails server -p 3000
+css: npx tailwindcss -i app/assets/stylesheets/application.tailwind.css -o app/assets/builds/tailwind.css --watch

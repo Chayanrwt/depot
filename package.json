@@ -1,0 +1,18 @@
+{
+  "name": "depot",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "esbuild app/javascript/application.js --bundle --outfile=app/assets/builds/application.js",
+    "build:css": "tailwindcss -i app/assets/stylesheets/application.tailwind.css -o app/assets/builds/application.css"
+  },
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.12",
+    "esbuild": "^0.25.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.8"
+  }
+}

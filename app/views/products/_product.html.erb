@@ -1,0 +1,17 @@
+<div id="<%= dom_id product %>" class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title"><strong>Title:</strong> <%= product.title %></h5>
+
+    <p class="card-text">
+      <strong>Description:</strong> <%= product.description %>
+    </p>
+
+    <p class="card-text">
+      <strong>Image URL:</strong> <%= product.image_url %>
+    </p>
+
+    <p class="card-text">
+      <strong>Price:</strong> <span class="badge bg-success">$<%= product.price %></span>
+    </p>
+  </div>
+</div>
