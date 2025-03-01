@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <% if notice.present? %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= notice %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <h1 class="fw-bold border-bottom pb-2 mb-4">Your Pragmatic Catalog</h1>
+
+  <ul class="list-unstyled">
+    <% cache @products do %>
+      <% @products.each do |product| %>
+        <% cache product do %>
+          <li class="d-flex align-items-start mb-4 border-bottom pb-3">
+            <%= image_tag(product.image_url, class: 'img-fluid rounded shadow-sm me-4', style: 'width: 120px; height: 160px; object-fit: contain;') %>
+
+            <div>
+              <h2 class="fw-bold h5 mb-2"><%= product.title %></h2>
+              <p class="text-muted"><%= sanitize(product.description) %></p>
+              <div class="mt-2">
+                <span class="fw-bold text-success"><%= number_to_currency(product.price) %></span>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
